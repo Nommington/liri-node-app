@@ -54,9 +54,9 @@ function interesting() {
 }
 
 function doTheThing(oper, param) {
-    fs.appendFile("log.txt", oper + " - " + param, function(err){
+    fs.appendFile("log.txt", "\n" + oper + " - " + param + "///////////", function(err){
         if (err) throw err;
-        console.log(oper + param);
+        //console.log("\n" + oper + param);
     })
     switch (oper) {
         case "my-tweets":
