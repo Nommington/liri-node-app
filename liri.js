@@ -54,6 +54,10 @@ function interesting() {
 }
 
 function doTheThing(oper, param) {
+    fs.appendFile("log.txt", oper + " - " + param, function(err){
+        if (err) throw err;
+        console.log(oper + param);
+    })
     switch (oper) {
         case "my-tweets":
             if (empty) {
@@ -117,7 +121,7 @@ function doTheThing(oper, param) {
             });
             break;
         case "do-what-it-says":
-            console.log("You've ceded control to LIRI.");
+            console.log("You've ceded control to LIRI. Was that wise?");
             console.log("Your search parameters, if you entered any, are irrelevant.");
             console.log("LIRI will display information about one of LIRI creator's favorite movies.");
             console.log("");
